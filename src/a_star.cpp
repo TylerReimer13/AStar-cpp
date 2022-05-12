@@ -47,9 +47,8 @@ inline float AStar::heuristic(vector<int>& a, vector<int>& b, string type) {
 	if (type == "manhattan")
 		return abs(b[0] - a[0]) + abs(b[1] - a[1]);
 
-	// Dont need to compute the square root here, since we are just comparing relative distances
 	else
-		return pow(b[0] - a[0], 2) + pow(b[1] - a[1], 2);
+		return pow(pow(b[0] - a[0], 2) + pow(b[1] - a[1], 2), .5);
 
 };
 
